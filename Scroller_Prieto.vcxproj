@@ -19,14 +19,25 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Elements\Button.cpp" />
+    <ClCompile Include="src\Elements\Enemy.cpp" />
+    <ClCompile Include="src\Elements\Player.cpp" />
     <ClCompile Include="src\GameData\Game.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ScreenManager\Menu.cpp" />
+    <ClCompile Include="src\ScreenManager\screenCredits.cpp" />
+    <ClCompile Include="src\ScreenManager\screenGameplay.cpp" />
+    <ClCompile Include="src\ScreenManager\ScreenManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Elements\Button.h" />
+    <ClInclude Include="src\Elements\Enemy.h" />
     <ClInclude Include="src\Elements\Player.h" />
     <ClInclude Include="src\GameData\Game.h" />
     <ClInclude Include="src\ScreenManager\Menu.h" />
+    <ClInclude Include="src\ScreenManager\screenCredits.h" />
+    <ClInclude Include="src\ScreenManager\screenGameplay.h" />
+    <ClInclude Include="src\ScreenManager\ScreenManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

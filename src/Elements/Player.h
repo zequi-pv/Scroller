@@ -9,4 +9,8 @@ namespace game
 		Vector2 size;
 		float speed;
 	};
+
+	Player initPlayer();
+	void movePlayer(Player& player);
+	void drawPlayer(Player& player);
 }

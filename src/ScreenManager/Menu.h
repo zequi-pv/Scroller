@@ -1,16 +1,10 @@
 #pragma once
 #include "raylib.h"
+#include "GameData/Game.h"
+#include "Elements/Button.h"
+#include "ScreenManager.h"
 
 namespace game
 {
-	enum class GameScreen
-	{
-		Menu,
-		GamePlay,
-		Credits,
-		Exit
-	};
-	extern GameScreen gameScreen;
-
-	void ScenesSwitch();
+	void drawMenu(Vector2 mouse, Button& buttonPlay, Button& buttonCredits, Button& buttonExit, GameScreen& gameScreen);
 }

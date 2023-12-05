@@ -5,35 +5,69 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Archivos de encabezado">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Elements">
+      <UniqueIdentifier>{ecf22a00-4f92-40bc-b1a4-7151a7c3280f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de recursos">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="ScreenManager">
+      <UniqueIdentifier>{7530189d-a669-4d68-b68d-74fe86306822}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameData">
+      <UniqueIdentifier>{3a70e373-892a-4030-b38d-b744ebdb71b1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameData\Game.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="src\Elements\Button.cpp">
+      <Filter>Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ScreenManager\ScreenManager.cpp">
+      <Filter>ScreenManager</Filter>
     </ClCompile>
     <ClCompile Include="src\ScreenManager\Menu.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>ScreenManager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameData\Game.cpp">
+      <Filter>GameData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ScreenManager\screenGameplay.cpp">
+      <Filter>ScreenManager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Elements\Player.cpp">
+      <Filter>Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ScreenManager\screenCredits.cpp">
+      <Filter>ScreenManager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Elements\Enemy.cpp">
+      <Filter>Elements</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\GameData\Game.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ScreenManager\Menu.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="src\Elements\Button.h">
+      <Filter>Elements</Filter>
     </ClInclude>
     <ClInclude Include="src\Elements\Player.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScreenManager\ScreenManager.h">
+      <Filter>ScreenManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScreenManager\Menu.h">
+      <Filter>ScreenManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameData\Game.h">
+      <Filter>GameData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScreenManager\screenGameplay.h">
+      <Filter>ScreenManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScreenManager\screenCredits.h">
+      <Filter>ScreenManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Elements\Enemy.h">
+      <Filter>Elements</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
