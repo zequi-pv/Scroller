@@ -32,7 +32,7 @@ namespace game
     float scrollingMid = 0.0f;
     float scrollingFore = 0.0f;
 
-    Texture2D backGround, midGround, foreGround;
+    Texture2D backGround, midGround, foreGround, playerTex, enemyTex;
 
     GameScreen gameScreen = GameScreen::Menu;
 
@@ -58,15 +58,18 @@ namespace game
 
         backGround = LoadTexture("res/textures/background.png");
         midGround = LoadTexture("res/textures/midground.png");
-        foreGround = LoadTexture("");
+        foreGround = LoadTexture("res/textures/foreground.png");
 
-        player = initPlayer();
+        playerTex = LoadTexture("res/textures/player.png");
+        enemyTex = LoadTexture("res/textures/enemy.png");
+
+        player = initPlayer(playerTex);
 
         parallax = initParallax(backGround, midGround, foreGround, scrollingBack, scrollingMid, scrollingFore);
 
         for (int i = 0; i < maxEnemies; i++)
         {
-            enemy = initEnemy();
+            enemy = initEnemy(enemyTex);
             enemy.id = i;
             if (enemy.id == 1)
             {

@@ -10,9 +10,10 @@ namespace game
 		float speed;
 		int id;
 		bool isActive;
+		Texture2D texture;
 	};
 
-	Enemy initEnemy();
+	Enemy initEnemy(Texture2D enemyTex);
 	void moveEnemies(Enemy enemies[], int maxEnemies);
 	void drawEnemies(Enemy enemies[], int maxEnemies);
 }
