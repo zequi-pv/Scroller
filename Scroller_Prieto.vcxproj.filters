@@ -43,6 +43,9 @@
     <ClCompile Include="src\Elements\Enemy.cpp">
       <Filter>Elements</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameData\Utils.cpp">
+      <Filter>GameData</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Elements\Button.h">
@@ -68,6 +71,9 @@
     </ClInclude>
     <ClInclude Include="src\Elements\Enemy.h">
       <Filter>Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameData\Utils.h">
+      <Filter>GameData</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -7,6 +7,8 @@ namespace game
 	void drawMenu(Vector2 mouse, Button& buttonPlay, Button& buttonCredits, Button& buttonExit, GameScreen& gameScreen)
 	{
 		BeginDrawing();
+		ClearBackground(BLACK);
+		SetExitKey(KEY_ESCAPE);
 		buttonPlay.pos.x = static_cast<float>((GetScreenWidth() / 2) - buttonPlay.size.x / 2);
 		buttonPlay.pos.y = static_cast<float>((GetScreenHeight() / 2) - 50);
 		drawButton(mouse, buttonPlay);

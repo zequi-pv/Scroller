@@ -13,19 +13,19 @@ namespace game
 
 	void movePlayer(Player& player)
 	{
-		if (IsKeyDown(KEY_W))
+		if (IsKeyDown(KEY_UP))
 		{
 			player.pos.y -= player.speed * GetFrameTime();
 		}
-		if (IsKeyDown(KEY_A))
+		if (IsKeyDown(KEY_LEFT))
 		{
 			player.pos.x -= player.speed * GetFrameTime();
 		}
-		if (IsKeyDown(KEY_S))
+		if (IsKeyDown(KEY_DOWN))
 		{
 			player.pos.y += player.speed * GetFrameTime();
 		}
-		if (IsKeyDown(KEY_D))
+		if (IsKeyDown(KEY_RIGHT))
 		{
 			player.pos.x += player.speed * GetFrameTime();
 		}
