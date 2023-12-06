@@ -10,9 +10,9 @@ using namespace std;
 
 namespace game
 {
-    void init();
-    void mainLoop();
-    void close();
+    static void init();
+    static void mainLoop();
+    static void close();
 
     bool isGameRunning = false;
     bool exitWindow = false;
@@ -21,10 +21,18 @@ namespace game
     Button buttonCredits;
     Button buttonExit;
 
+    Parallax parallax;
+
     const int maxEnemies = 6;
     Player player;
     Enemy enemy;
     Enemy enemies[maxEnemies];
+
+    float scrollingBack = 0.0f;
+    float scrollingMid = 0.0f;
+    float scrollingFore = 0.0f;
+
+    Texture2D backGround, midGround, foreGround;
 
     GameScreen gameScreen = GameScreen::Menu;
 
@@ -48,7 +56,13 @@ namespace game
         buttonCredits = initButton(size);
         buttonExit = initButton(size);
 
+        backGround = LoadTexture("res/textures/background.png");
+        midGround = LoadTexture("res/textures/midground.png");
+        foreGround = LoadTexture("");
+
         player = initPlayer();
+
+        parallax = initParallax(backGround, midGround, foreGround, scrollingBack, scrollingMid, scrollingFore);
 
         for (int i = 0; i < maxEnemies; i++)
         {
@@ -104,7 +118,7 @@ namespace game
         }
         movePlayer(player);
         moveEnemies(enemies, maxEnemies);
-        drawGame(player, enemies, maxEnemies);
+        drawGame(player, enemies, maxEnemies, parallax);
         screenCollision(player);
         if (EnemyCollision(enemies, maxEnemies))
         {
