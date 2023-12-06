@@ -22,4 +22,14 @@ namespace game
             player.pos.y = 0;
         }
     }
+
+    bool EnemyCollision(Enemy enemies[], int maxEnemies) 
+    {
+        float collision = 0;
+        for (int i = 0; i < maxEnemies; i++)
+        {
+            collision = enemies[i].pos.y > GetScreenHeight();
+        }
+        return collision;
+    }
 }

@@ -6,4 +6,5 @@
 namespace game
 {
 	void screenCollision(Player& player);
+	bool EnemyCollision(Enemy enemies[], int maxEnemies);
 }

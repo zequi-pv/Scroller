@@ -106,6 +106,13 @@ namespace game
         moveEnemies(enemies, maxEnemies);
         drawGame(player, enemies, maxEnemies);
         screenCollision(player);
+        if (EnemyCollision(enemies, maxEnemies))
+        {
+            for (int i = 0; i < maxEnemies; i++)
+            {
+                enemies[i].pos.y = 0 - enemies[i].size.y;
+            }
+        }
     }
 
     void close() 
