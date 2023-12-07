@@ -21,6 +21,7 @@ namespace game
 		{
 			if (bullets[i].isActive) 
 			{
+				//cout << "Move" << bullets[i].isActive << endl;
 				bullets[i].pos.y -= bullets[i].speed * GetFrameTime();
 			}
 		}

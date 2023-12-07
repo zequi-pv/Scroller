@@ -8,7 +8,7 @@ namespace game
 {
 	void screenCollision(Player& player);
 	bool EnemyCollision(Enemy enemies[], int maxEnemies);
-	void bulletCollision(Enemy enemies[], int maxEnemies, Bullet bullets[], int maxBullets, Player& player);
+	bool bulletCollision(Enemy enemies[], int i, Bullet bullets[], int j);
 	void resetEnemy(Enemy enemies[], int maxEnemies);
 	void crashCollision(Player& player, Enemy enemies[], int maxEnemies, bool& endMatch);
 }

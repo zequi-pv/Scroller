@@ -25,7 +25,7 @@ namespace game
 
     bool EnemyCollision(Enemy enemies[], int maxEnemies) 
     {
-        float collision = 0;
+        bool collision = {};
         for (int i = 0; i < maxEnemies; i++)
         {
             collision = enemies[i].pos.y > GetScreenHeight();
@@ -33,33 +33,18 @@ namespace game
         return collision;
     }
 
-    void bulletCollision(Enemy enemies[], int maxEnemies, Bullet bullets[], int maxBullets, Player& player)
+    bool bulletCollision(Enemy enemies[], int i, Bullet bullets[], int j)
     {
-        for (int i = 0; i < maxBullets; i++)
-        {
-            for (int j = 0; j < maxEnemies; j++)
-            {
-                if (bullets[i].isActive && enemies[i].isActive)
-                {
-                    if (bullets[i].pos.x + bullets[i].size.x >= enemies[j].pos.x
+        bool collision = {};
+       if (bullets[i].isActive && enemies[i].isActive)
+       {
+                    collision = (bullets[i].pos.x + bullets[i].size.x >= enemies[j].pos.x
                         && bullets[i].pos.x <= enemies[j].pos.x + enemies[j].size.x
                         && bullets[i].pos.y + bullets[i].size.y >= enemies[j].pos.y
-                        && bullets[i].pos.y <= enemies[j].pos.y + enemies[j].size.y)
-                    {
-                        bullets[i].isActive = false;
-                        enemies[j].isActive = false;
-                        enemies[j].isDead = true;
-                        player.score += enemies[j].pointsToGive;
-                        enemies[j].givenPoints = true;
-
-                        if (enemies[j].givenPoints)
-                        {
-                            enemies[j].pointsToGive = 0;
-                        }
-                    }
-                }
-            }
-        }
+                        && bullets[i].pos.y <= enemies[j].pos.y + enemies[j].size.y);
+                    
+       }
+       return collision;
     }
 
     void resetEnemy(Enemy enemies[], int maxEnemies)
@@ -73,27 +58,27 @@ namespace game
                 enemies[i].givenPoints = false;
                 enemies[i].pointsToGive = 100;
                 enemies[i].pos.y = -100.0f;
-                if (enemies[i].id == 1)
+                if (enemies[i].id == 0)
                 {
                     enemies[i].pos.x = 154.0f;
                 }
-                if (enemies[i].id == 2)
+                if (enemies[i].id == 1)
                 {
                     enemies[i].pos.x = 308.0f;
                 }
-                if (enemies[i].id == 3)
+                if (enemies[i].id == 2)
                 {
                     enemies[i].pos.x = 462.0f;
                 }
-                if (enemies[i].id == 4)
+                if (enemies[i].id == 3)
                 {
                     enemies[i].pos.x = 616.0f;
                 }
-                if (enemies[i].id == 5)
+                if (enemies[i].id == 4)
                 {
                     enemies[i].pos.x = 770.0f;
                 }
-                if (enemies[i].id == 6)
+                if (enemies[i].id == 5)
                 {
                     enemies[i].pos.x = 924.0f;
                 }

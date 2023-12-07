@@ -7,6 +7,10 @@
 #include "Elements/Bullet.h"
 #include "Utils.h"
 
+#include <iostream>
+
+using namespace std;
+
 namespace game
 {
     static void init();
@@ -105,27 +109,27 @@ namespace game
         {
             enemy = initEnemy(enemyTex);
             enemy.id = i;
-            if (enemy.id == 1)
+            if (enemy.id == 0)
             {
                 enemy.pos.x = 154.0f;
             }
-            if (enemy.id == 2)
+            if (enemy.id == 1)
             {
                 enemy.pos.x = 308.0f;
             }
-            if (enemy.id == 3)
+            if (enemy.id == 2)
             {
                 enemy.pos.x = 462.0f;
             }
-            if (enemy.id == 4)
+            if (enemy.id == 3)
             {
                 enemy.pos.x = 616.0f;
             }
-            if (enemy.id == 5)
+            if (enemy.id == 4)
             {
                 enemy.pos.x = 770.0f;
             }
-            if (enemy.id == 6)
+            if (enemy.id == 5)
             {
                 enemy.pos.x = 924.0f;
             }
@@ -165,13 +169,31 @@ namespace game
             UpdateMusicStream(gameplayMusic);
             movePlayer(player);
             moveEnemies(enemies, maxEnemies);
+            for (int i = 0; i < maxBullet; i++)
+            {
+                for (int j = 0; j < maxEnemies; j++)
+                {
+                    if (bulletCollision(enemies, i, bullets, j))
+                    {
+                        bullets[i].isActive = false;
+                        enemies[j].isActive = false;
+                        enemies[j].isDead = true;
+                        player.score += enemies[j].pointsToGive;
+                        enemies[j].givenPoints = true;
+
+                        if (enemies[j].givenPoints)
+                        {
+                            enemies[j].pointsToGive = 0;
+                        }
+                    } 
+
+                }
+            }
             moveBullets(bullets, maxBullet);
-            
             drawGame(player, enemies, maxEnemies, parallax, bullets, maxBullet, endMatch, mouse, buttonBack, buttonRestart, gameScreen );
 
             screenCollision(player);
             bulletScreenCollision();
-            bulletCollision(enemies, maxEnemies, bullets, maxBullet, player);
             if (EnemyCollision(enemies, maxEnemies))
             {
                 for (int i = 0; i < maxEnemies; i++)
@@ -191,7 +213,10 @@ namespace game
                     }
                 }
             }
-            
+            /*for (int i = 0; i < maxBullet; i++)
+            {
+                cout << bullets[i].isActive << endl;
+            }*/
             crashCollision(player, enemies, maxEnemies, endMatch);
 
             resetEnemy(enemies, maxEnemies);
@@ -229,27 +254,27 @@ namespace game
         {
             enemy = initEnemy(enemyTex);
             enemy.id = i;
-            if (enemy.id == 1)
+            if (enemy.id == 0)
             {
                 enemy.pos.x = 154.0f;
             }
-            if (enemy.id == 2)
+            if (enemy.id == 1)
             {
                 enemy.pos.x = 308.0f;
             }
-            if (enemy.id == 3)
+            if (enemy.id == 2)
             {
                 enemy.pos.x = 462.0f;
             }
-            if (enemy.id == 4)
+            if (enemy.id == 3)
             {
-                enemy.pos.x = 700.0f;
+                enemy.pos.x = 616.0f;
             }
-            if (enemy.id == 5)
+            if (enemy.id == 4)
             {
                 enemy.pos.x = 770.0f;
             }
-            if (enemy.id == 6)
+            if (enemy.id == 5)
             {
                 enemy.pos.x = 924.0f;
             }
