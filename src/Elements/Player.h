@@ -8,6 +8,7 @@ namespace game
 		Vector2 pos;
 		Vector2 size;
 		float speed;
+		int score;
 		Texture2D texture;
 	};
 

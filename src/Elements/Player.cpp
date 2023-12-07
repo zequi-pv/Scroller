@@ -8,6 +8,7 @@ namespace game
 		player.size = { 50.0f, 50.0f };
 		player.pos = { static_cast<float>((GetScreenWidth() / 2) - (player.size.x / 2)), static_cast<float>(GetScreenHeight() - 100) };
 		player.speed = 200.0f;
+		player.score = 0;
 		player.texture = playerTex;
 		return player;
 	}

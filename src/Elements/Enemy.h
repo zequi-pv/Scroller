@@ -10,6 +10,9 @@ namespace game
 		float speed;
 		int id;
 		bool isActive;
+		bool isDead;
+		bool givenPoints;
+		int pointsToGive;
 		Texture2D texture;
 	};
 

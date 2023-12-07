@@ -40,6 +40,9 @@
       <Filter>GameData</Filter>
     </ClCompile>
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Elements\Bullet.cpp">
+      <Filter>Elements</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Elements\Button.h">
@@ -68,6 +71,9 @@
     </ClInclude>
     <ClInclude Include="src\GameData\Utils.h">
       <Filter>GameData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Elements\Bullet.h">
+      <Filter>Elements</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

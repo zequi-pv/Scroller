@@ -2,7 +2,7 @@
 
 namespace game
 {
-	void drawGame(Player player, Enemy enemies[], int maxEnemies, Parallax& parallax) 
+	void drawGame(Player player, Enemy enemies[], int maxEnemies, Parallax& parallax, Bullet bullets[], int maxBullets)
 	{
 		BeginDrawing();
 		ClearBackground(BLACK);
@@ -27,8 +27,20 @@ namespace game
 		DrawTextureEx(parallax.foreground, Vector2{ 400.0f, static_cast<float>((parallax.foreground.height * 2 + parallax.scrollingFore)) }, 0.0f, 2.0f, WHITE);
 		DrawTextureEx(parallax.foreground, Vector2{ 400.0f, static_cast<float>((parallax.foreground.height * 3 + parallax.scrollingFore) + (GetScreenHeight() /*/ 2.91f*/)) }, 0.0f, 2.0f, WHITE);
 
-		drawPlayer(player);
 		drawEnemies(enemies, maxEnemies);
+		drawPlayer(player);
+
+		DrawText("SCORE: ", 50, 100, 30, RED);
+		DrawText(TextFormat("%i", player.score), 170, 100, 30, RED);
+
+		for (int i = 0; i < maxBullets; i++)
+		{
+			if (bullets[i].isActive)
+			{
+				DrawTexture(bullets[i].texture, static_cast<int>(bullets[i].pos.x), static_cast<int>(bullets[i].pos.y), RAYWHITE);
+				//cout << bullets[i].pos.x << ", " << bullets[i].pos.y << endl;
+			}
+		}
 		EndDrawing();
 	}
 

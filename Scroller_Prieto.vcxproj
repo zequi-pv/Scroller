@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Elements\Bullet.cpp" />
     <ClCompile Include="src\Elements\Button.cpp" />
     <ClCompile Include="src\Elements\Enemy.cpp" />
     <ClCompile Include="src\Elements\Player.cpp" />
@@ -23,6 +24,7 @@
     <ClCompile Include="src\ScreenManager\ScreenManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Elements\Bullet.h" />
     <ClInclude Include="src\Elements\Button.h" />
     <ClInclude Include="src\Elements\Enemy.h" />
     <ClInclude Include="src\Elements\Player.h" />

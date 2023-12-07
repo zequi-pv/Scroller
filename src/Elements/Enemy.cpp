@@ -1,5 +1,7 @@
 #include "Enemy.h"
+#include <iostream>
 
+using namespace std;
 namespace game 
 {
 	Enemy initEnemy(Texture2D enemyTex)
@@ -10,6 +12,9 @@ namespace game
 		enemy.size = { 50.0f, 50.0f };
 		enemy.speed = 150.0f;
 		enemy.isActive = true;
+		enemy.isDead = false;
+		enemy.givenPoints = false;
+		enemy.pointsToGive = 100;
 		enemy.texture = enemyTex;
 		return enemy;
 	}
@@ -18,7 +23,11 @@ namespace game
 	{
 		for (int i = 0; i < maxEnemies; i++)
 		{
-			enemies[i].pos.y += enemies[i].speed * GetFrameTime();
+			if (enemies[i].isActive && !enemies[i].isDead)
+			{
+				cout << enemies[i].pos.x << enemies[i].pos.y << endl;
+				enemies[i].pos.y += enemies[i].speed * GetFrameTime();
+			}
 		}
 	}
 
@@ -26,7 +35,7 @@ namespace game
 	{
 		for (int i = 0; i < maxEnemies; i++)
 		{
-			if (enemies[i].isActive)
+			if (enemies[i].isActive && !enemies[i].isDead)
 			{
 				#ifndef DEBUG
 				DrawRectangle(static_cast<int>(enemies[i].pos.x), static_cast<int>(enemies[i].pos.y), static_cast<int>(enemies[i].size.x), static_cast<int>(enemies[i].size.y), RED);
