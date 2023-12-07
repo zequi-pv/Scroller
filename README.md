@@ -39,4 +39,5 @@ Double click the .exe file
 
 ## About:
 Contact: ezequielprietovaldez@gmail.com
+
 Linkedin: https://www.linkedin.com/in/ezequiel-prieto-valdez-3049b9251/
