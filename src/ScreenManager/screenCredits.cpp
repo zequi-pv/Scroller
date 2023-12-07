@@ -27,9 +27,8 @@ namespace game
 		DrawText("Programming by Ezequiel Prieto", 200, (GetScreenHeight() / 2) - 300, 20, YELLOW);
 		DrawText("Planes and bullet assets by Ezequiel Prieto", 200, (GetScreenHeight() / 2) - 250, 20, YELLOW);
 		DrawText("Parallax background assets by Free Game Assets", 200, (GetScreenHeight() / 2) - 150, 20, YELLOW);
-		DrawText("Shoot sound by SoundByDane", 200, (GetScreenHeight() / 2) - 50, 20, YELLOW);
-		DrawText("Menu music by DanzMacabre", 200, (GetScreenHeight() / 2) + 50, 20, YELLOW);
-		buttonCredits;
+		DrawText("Shooting sound by SoundByDane", 200, (GetScreenHeight() / 2) - 50, 20, YELLOW);
+		DrawText("Gameplay music by DanzMacabre", 200, (GetScreenHeight() / 2) + 50, 20, YELLOW);
 
 		buttonCredits.buttonOne.pos.x = static_cast<float>(100);
 		buttonCredits.buttonOne.pos.y = static_cast<float>((GetScreenHeight() / 2) - 200);
