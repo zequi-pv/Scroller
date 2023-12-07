@@ -33,11 +33,10 @@ DanzMacabre
 
 ## How to play:
 
-Download the zip file
-Extract the zip file
-Double click the .exe file
+- Download the zip file
+- Extract the zip file
+- Double click the .exe file
 
 ## About:
-Contact: ezequielprietovaldez@gmail.com
-
-Linkedin: https://www.linkedin.com/in/ezequiel-prieto-valdez-3049b9251/
+- Contact: ezequielprietovaldez@gmail.com
+- Linkedin: https://www.linkedin.com/in/ezequiel-prieto-valdez-3049b9251/
