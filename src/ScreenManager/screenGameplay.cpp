@@ -68,7 +68,6 @@ namespace game
 			if (bullets[i].isActive)
 			{
 				DrawTexture(bullets[i].texture, static_cast<int>(bullets[i].pos.x), static_cast<int>(bullets[i].pos.y), RAYWHITE);
-				//cout << bullets[i].pos.x << ", " << bullets[i].pos.y << endl;
 			}
 		}
 		EndDrawing();

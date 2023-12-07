@@ -4,11 +4,11 @@
 using namespace std;
 namespace game
 {
-	void drawMenu(Vector2 mouse, Button& buttonPlay, Button& buttonCredits, Button& buttonExit, GameScreen& gameScreen, Texture2D background, Music menuMusic)
+	void drawMenu(Vector2 mouse, Button& buttonPlay, Button& buttonCredits, Button& buttonExit, GameScreen& gameScreen, Texture2D background)
 	{
 		BeginDrawing();
 		ClearBackground(BLACK);
-		UpdateMusicStream(menuMusic);
+		
 		SetExitKey(KEY_ESCAPE);
 
 		DrawTexture(background, 0, 0, RAYWHITE);

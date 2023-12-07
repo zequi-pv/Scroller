@@ -1,7 +1,4 @@
 #include "Utils.h"
-#include <iostream>
-
-using namespace std;
 
 namespace game 
 {
@@ -90,7 +87,7 @@ namespace game
                 }
                 if (enemies[i].id == 4)
                 {
-                    enemies[i].pos.x = 616.0f;
+                    enemies[i].pos.x = 700.0f;
                 }
                 if (enemies[i].id == 5)
                 {

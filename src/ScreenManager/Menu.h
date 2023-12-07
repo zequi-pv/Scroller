@@ -6,5 +6,5 @@
 
 namespace game
 {
-	void drawMenu(Vector2 mouse, Button& buttonPlay, Button& buttonCredits, Button& buttonExit, GameScreen& gameScreen, Texture2D background, Music menuMusic);
+	void drawMenu(Vector2 mouse, Button& buttonPlay, Button& buttonCredits, Button& buttonExit, GameScreen& gameScreen, Texture2D background);
 }

@@ -1,7 +1,5 @@
 #include "Enemy.h"
-#include <iostream>
 
-using namespace std;
 namespace game 
 {
 	Enemy initEnemy(Texture2D enemyTex)
@@ -25,7 +23,6 @@ namespace game
 		{
 			if (enemies[i].isActive && !enemies[i].isDead)
 			{
-				//cout << enemies[i].pos.x << enemies[i].pos.y << endl;
 				enemies[i].pos.y += enemies[i].speed * GetFrameTime();
 			}
 		}

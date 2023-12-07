@@ -14,7 +14,6 @@ namespace game
     static void close();
     void bulletScreenCollision();
     void resetMusic(Music& music);
-    /*void resetBullets();*/
 
     bool isGameRunning = false;
     bool exitWindow = false;
@@ -24,14 +23,14 @@ namespace game
 
     ButtonCredits buttonCredit;
 
-    Music menuMusic;
+    Music gameplayMusic;
 
     Sound shootS;
 
     Parallax parallax;
 
     const int maxEnemies = 6;
-    const int maxBullet = 500;
+    const int maxBullet = 1000;
     Player player;
     Enemy enemy;
     Enemy enemies[maxEnemies];
@@ -46,6 +45,7 @@ namespace game
 
     GameScreen gameScreen = GameScreen::Menu;
 
+    Vector2 sizeOne, sizeTwo, sizeThree, sizeFour;
     Vector2 size = { 200, 43 };
 
 	void runGame()
@@ -68,9 +68,19 @@ namespace game
         buttonBack = initButton(size);
         buttonRestart = initButton(size);
 
+        sizeOne = { 300, 43 };
+        sizeTwo = { 900, 43 };
+        sizeThree = { 550, 43 };
+        sizeFour = { 650, 43 };
+
+        buttonCreditsOne = initButton(sizeOne);
+        buttonCreditsTwo = initButton(sizeTwo);
+        buttonCreditsThree = initButton(sizeThree);
+        buttonCreditsFour = initButton(sizeFour);
+
         buttonCredit = initButtonCredits(buttonCreditsOne, buttonCreditsTwo, buttonCreditsThree, buttonCreditsFour);
 
-        menuMusic = LoadMusicStream("res/audio/menuMusic.wav");
+        gameplayMusic = LoadMusicStream("res/audio/gamePlayMusic.wav");
 
         shootS = LoadSound("res/audio/Shoot.wav");
 
@@ -88,8 +98,8 @@ namespace game
 
         parallax = initParallax(backGround, midGround, foreGround, scrollingBack, scrollingMid, scrollingFore);
 
-        PlayMusicStream(menuMusic);
-        SetMusicVolume(menuMusic, 0.5f);
+        PlayMusicStream(gameplayMusic);
+        SetMusicVolume(gameplayMusic, 0.5f);
 
         for (int i = 0; i < maxEnemies; i++)
         {
@@ -109,7 +119,7 @@ namespace game
             }
             if (enemy.id == 4)
             {
-                enemy.pos.x = 616.0f;
+                enemy.pos.x = 670.0f;
             }
             if (enemy.id == 5)
             {
@@ -135,7 +145,7 @@ namespace game
         {
             while (!WindowShouldClose() && !isGameRunning)
             {
-                ScenesSwitch(gameScreen,buttonPlay, buttonCredits, buttonExit, isGameRunning, backGroundMenu, menuMusic, buttonCredit, buttonBack);
+                ScenesSwitch(gameScreen,buttonPlay, buttonCredits, buttonExit, isGameRunning, backGroundMenu, buttonCredit, buttonBack);
                 exitWindow = true;
             }
         }
@@ -152,6 +162,7 @@ namespace game
         }
         if (!endMatch)
         {
+            UpdateMusicStream(gameplayMusic);
             movePlayer(player);
             moveEnemies(enemies, maxEnemies);
             moveBullets(bullets, maxBullet);
@@ -190,26 +201,7 @@ namespace game
             drawGame(player, enemies, maxEnemies, parallax, bullets, maxBullet, endMatch, mouse, buttonBack, buttonRestart, gameScreen);
             
         }
-        
-        
-        /*resetBullets();*/
     }
-
-    /*void resetBullets() 
-    {
-        if (!bullets[maxBullet].isActive == maxBullet)
-        {
-            for (int i = 0; i < maxBullet; i++)
-            {
-                bullets[i].isActive = true;
-            }
-        }
-
-        if (bullets[i].pos.y < 0)
-                {
-                    bullets[i].isActive = false;
-                }
-    }*/
 
     void bulletScreenCollision() 
     {
@@ -230,7 +222,7 @@ namespace game
 
     void resetGame() 
     {
-        resetMusic(menuMusic);
+        resetMusic(gameplayMusic);
         endMatch = false;
         player = initPlayer(playerTex);
         for (int i = 0; i < maxEnemies; i++)
@@ -251,7 +243,7 @@ namespace game
             }
             if (enemy.id == 4)
             {
-                enemy.pos.x = 616.0f;
+                enemy.pos.x = 700.0f;
             }
             if (enemy.id == 5)
             {
@@ -273,11 +265,14 @@ namespace game
 
     void close() 
     {
+        UnloadMusicStream(gameplayMusic);
+        UnloadSound(shootS);
         UnloadTexture(backGround);
         UnloadTexture(midGround); 
         UnloadTexture(foreGround);
         UnloadTexture(playerTex);
         UnloadTexture(enemyTex);
+        UnloadTexture(bulletTex);
         CloseWindow();
     }
 }

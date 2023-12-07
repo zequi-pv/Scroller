@@ -7,6 +7,8 @@ namespace game
 	{
 		Vector2 pos;
 		Vector2 size;
+		Color colorOne;
+		Color colorTwo;
 		bool isSelected;
 	};
 

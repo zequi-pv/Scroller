@@ -6,5 +6,5 @@
 
 namespace game
 {
-	void ScenesSwitch(GameScreen& gameScreen, Button& buttonPlay, Button& buttonCredits, Button& buttonExit, bool& isGameRunning, Texture2D background, Music menuMusic, ButtonCredits& buttonCredit, Button& buttonBack);
+	void ScenesSwitch(GameScreen& gameScreen, Button& buttonPlay, Button& buttonCredits, Button& buttonExit, bool& isGameRunning, Texture2D background, ButtonCredits& buttonCredit, Button& buttonBack);
 }

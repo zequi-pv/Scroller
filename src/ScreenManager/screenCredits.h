@@ -14,5 +14,5 @@ namespace game
 	};
 
 	ButtonCredits initButtonCredits(Button buttonOne, Button buttonTwo, Button buttonThree, Button buttonFour);
-	void drawCredits(Vector2 mouse, ButtonCredits buttonCredits, Button buttonBack, GameScreen& gameScreen);
+	void drawCredits(Vector2 mouse, ButtonCredits buttonCredits, Button buttonBack, GameScreen& gameScreen, Texture2D backGroundMenu);
 }
