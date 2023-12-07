@@ -25,7 +25,7 @@ namespace game
 		{
 			if (enemies[i].isActive && !enemies[i].isDead)
 			{
-				cout << enemies[i].pos.x << enemies[i].pos.y << endl;
+				//cout << enemies[i].pos.x << enemies[i].pos.y << endl;
 				enemies[i].pos.y += enemies[i].speed * GetFrameTime();
 			}
 		}
@@ -37,9 +37,6 @@ namespace game
 		{
 			if (enemies[i].isActive && !enemies[i].isDead)
 			{
-				#ifndef DEBUG
-				DrawRectangle(static_cast<int>(enemies[i].pos.x), static_cast<int>(enemies[i].pos.y), static_cast<int>(enemies[i].size.x), static_cast<int>(enemies[i].size.y), RED);
-				#endif // DEBUG
 				DrawTexture(enemies[i].texture, static_cast<int>(enemies[i].pos.x), static_cast<int>(enemies[i].pos.y), RAYWHITE);
 			}
 		}

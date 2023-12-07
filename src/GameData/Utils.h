@@ -10,4 +10,5 @@ namespace game
 	bool EnemyCollision(Enemy enemies[], int maxEnemies);
 	void bulletCollision(Enemy enemies[], int maxEnemies, Bullet bullets[], int maxBullets, Player& player);
 	void resetEnemy(Enemy enemies[], int maxEnemies);
+	void crashCollision(Player& player, Enemy enemies[], int maxEnemies, bool& endMatch);
 }

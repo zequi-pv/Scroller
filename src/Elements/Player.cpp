@@ -35,9 +35,6 @@ namespace game
 
 	void drawPlayer(Player& player)
 	{
-		#ifdef DEBUG
-		#endif // DEBUG
-		DrawRectangle(static_cast<int>(player.pos.x), static_cast<int>(player.pos.y), static_cast<int>(player.size.x), static_cast<int>(player.size.y), RED);
 		DrawTexture(player.texture, static_cast<int>(player.pos.x), static_cast<int>(player.pos.y), RAYWHITE);
 	}
 }

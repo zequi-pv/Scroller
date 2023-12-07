@@ -104,16 +104,16 @@ namespace game
         }
     }
 
-    void crashCollision(Player& player, Enemy enemies[], int maxBullets) 
+    void crashCollision(Player& player, Enemy enemies[], int maxEnemies, bool& endMatch) 
     {
-        for (int i = 0; i < maxBullets; i++)
+        for (int i = 0; i < maxEnemies; i++)
         {
             if (player.pos.x + player.size.x >= enemies[i].pos.x
                 && player.pos.x <= enemies[i].pos.x + enemies[i].size.x
                 && player.pos.y + player.size.y >= enemies[i].pos.y
                 && player.pos.y <= enemies[i].pos.y + enemies[i].size.y)
             {
-
+                endMatch = true;
             }
         }
     }

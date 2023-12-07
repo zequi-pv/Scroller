@@ -12,6 +12,7 @@ namespace game
 		Exit
 	};
 
-	void gameLoop();
+	void gameLoop(Vector2 mouse);
 	void runGame();
+	void resetGame();
 }

@@ -4,11 +4,17 @@
 using namespace std;
 namespace game
 {
-	void drawMenu(Vector2 mouse, Button& buttonPlay, Button& buttonCredits, Button& buttonExit, GameScreen& gameScreen)
+	void drawMenu(Vector2 mouse, Button& buttonPlay, Button& buttonCredits, Button& buttonExit, GameScreen& gameScreen, Texture2D background, Music menuMusic)
 	{
 		BeginDrawing();
 		ClearBackground(BLACK);
+		UpdateMusicStream(menuMusic);
 		SetExitKey(KEY_ESCAPE);
+
+		DrawTexture(background, 0, 0, RAYWHITE);
+
+		DrawText("AIRFORCE", (GetScreenWidth() / 2) - 200, (GetScreenHeight() / 2) - 250, 80, YELLOW);
+
 		buttonPlay.pos.x = static_cast<float>((GetScreenWidth() / 2) - buttonPlay.size.x / 2);
 		buttonPlay.pos.y = static_cast<float>((GetScreenHeight() / 2) - 50);
 		drawButton(mouse, buttonPlay);
