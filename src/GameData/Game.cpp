@@ -119,7 +119,7 @@ namespace game
             }
             if (enemy.id == 4)
             {
-                enemy.pos.x = 670.0f;
+                enemy.pos.x = 616.0f;
             }
             if (enemy.id == 5)
             {
